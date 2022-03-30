@@ -1,4 +1,3 @@
-#include <header.h>
 /* sinelon
  *
  * By: Mark Kriegsman
