@@ -40,17 +40,17 @@ bool gReverseDirection = false;
 // Higher chance = more roaring fire.  Lower chance = more flickery fire.
 // Default 120, suggested range 50-200.
 #define SPARKING 120
-
+static byte heatArray[300];
 void Fire2012(CRGB* leds, uint16_t len)
 {
 // Array of temperature readings at each simulation cell
-    static byte *heat = nullptr;
+    static byte *heat = heatArray;
     static uint16_t curlen = 0;
     if (curlen != len) {
        // JD this is a quick hack to make the original code run.
        // JD TODO this buffer should be also passed in as an argument
-       delete [] heat;
-       heat = new byte[len]();
+      //  delete [] heat;
+      //  heat = new byte[len]();
        curlen = len;
     }
 
